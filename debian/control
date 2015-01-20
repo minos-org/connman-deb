@@ -1,0 +1,80 @@
+Source: connman
+Maintainer: Javier P.L. <chilicuil@ubuntu.com>
+Section: net
+Priority: optional
+Build-Depends: debhelper(>=8), wpasupplicant(>=0.7), libglib2.0-dev(>=2.28),libdbus-1-dev(>=1.4), libgnutls-dev(>=2.8)|libgnutls28-dev(>=3.3), iptables-dev(>=1.4.8), libreadline-gplv2-dev, openconnect, openvpn, vpnc
+
+Package: connman
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: debconf
+Recommends: wpasupplicant, bluez, ofono, pacrunner, dundee, neard, connman-vpn, rfkill
+Replaces: network-manager
+Conflicts: network-manager, wicd-daemon
+Description: ConnMan daemon
+ This package contains the Connection Manager (ConnMan) daemon
+ .
+ ConnMan, or Connection Manager, is a system level daemon that manages
+ IPv4 and IPv6 network connections and the associated network devices.
+ .
+ ConnMan provides IPv4 and IPv6 connectivity via:
+  * ethernet
+  * WiFi, when wpa_supplicant is installed
+  * Cellular, when oFono is installed
+  * Bluetooth, when Bluez is installed
+  * USB gadget/client devices
+ .
+ ConnMan implements DNS resolving and caching, DHCP clients for both IPv4 and
+ IPv6, link-local IPv4 address handling and tethering (IP connection sharing)
+ to clients via USB, ethernet, WiFi, cellular and Bluetooth.
+
+Package: connman-dbus-autostart
+Architecture: all
+Depends: (=${Source-Version})
+Description: ConnMan daemon dbus autostart support file
+
+Package: connman-vpn
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, connman(>=1.10)
+Recommends: connman (=${Source-Version})
+Description: ConnMan VPN daemon
+ This package contains the ConnMan VPN daemon
+ .
+ ConnMan VPN daemon manages VPNs on behalf of connmand and start and stops
+ various VPN client applications. The VPN daemon can also be run standalone
+ without connmand.
+
+Package: connman-client
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, connman(>=0.80)
+Description: ConnMan command line tools
+ This package contains ConnMan command line client
+
+Package: connman-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, connman, python
+Description: ConnMan command line tools
+ This package contains ConnMan tools and test scripts
+
+Package: connman-dev
+Section: devel
+Architecture: any
+Depends: ${misc:Depends}, libglib2.0-dev(>=2.28), libdbus-1-dev(>=1.4)
+Description: ConnMan development files
+ This package contains header files and pkgconfig support for
+ developing ConnMan plugins.
+
+Package: connman-doc
+Section: doc
+Architecture: any
+Depends:
+Replaces: connman-doc
+Conflicts: connman-doc
+Description: ConnMan documentation
+ This package contains documentation of ConnMan APIs
+
+Package: connman-vpn-doc
+Section: doc
+Architecture: any
+Description: ConnMan VPN daemon documentation
+ This package contains documentation of ConnMan VPN daemon APIs

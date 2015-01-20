@@ -1,0 +1,4 @@
+src/main.conf etc/connman/
+etc/dbus-1/system.d/connman.conf
+usr/sbin/connmand
+usr/share/man
