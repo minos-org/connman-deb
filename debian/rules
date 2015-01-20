@@ -28,6 +28,10 @@ override_dh_installinit:
 
 override_dh_auto_test:
 
+override_dh_strip:
+	dh_strip -pconnman --dbg-package=connman-dbg
+	dh_strip -pconnman-client --dbg-package=connman-client-dbg
+
 get-orig-source:
 	rm -rf debian/tmp; mkdir debian/tmp
 	cd debian/tmp; wget https://github.com/minos-org/connman/archive/${DEB_MASTER_VERSION}.tar.gz

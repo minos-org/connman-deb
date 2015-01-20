@@ -28,9 +28,16 @@ Description: ConnMan daemon
  IPv6, link-local IPv4 address handling and tethering (IP connection sharing)
  to clients via USB, ethernet, WiFi, cellular and Bluetooth.
 
+Package: connman-dbg
+Architecture: any
+Section: debug
+Depends: connman (=${binary:Version}), ${misc:Depends}
+Description: Debugging symbols for the connman daemon
+ This package contains the debugging symbols for connman
+
 Package: connman-dbus-autostart
 Architecture: all
-Depends: (=${Source-Version})
+Depends: connman(>=1.10)
 Description: ConnMan daemon dbus autostart support file
 
 Package: connman-vpn
@@ -46,9 +53,16 @@ Description: ConnMan VPN daemon
 
 Package: connman-client
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, connman(>=0.80)
+Depends: connman (=${binary:Version}), ${misc:Depends}
 Description: ConnMan command line tools
  This package contains ConnMan command line client
+
+Package: connman-client-dbg
+Architecture: any
+Section: debug
+Depends: connman-client (=${binary:Version})
+Description: Debugging symbols for the connman cli interface
+ This package contains the debugging symbols for the cli connman interface
 
 Package: connman-tools
 Architecture: any
@@ -66,8 +80,7 @@ Description: ConnMan development files
 
 Package: connman-doc
 Section: doc
-Architecture: any
-Depends:
+Architecture: all
 Replaces: connman-doc
 Conflicts: connman-doc
 Description: ConnMan documentation
