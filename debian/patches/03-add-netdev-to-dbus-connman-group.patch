@@ -1,0 +1,12 @@
+--- a/src/connman-dbus.conf
++++ b/src/connman-dbus.conf
+@@ -11,6 +11,9 @@
+     <policy at_console="true">
+         <allow send_destination="net.connman"/>
+     </policy>
++    <policy group="netdev">
++        <allow send_destination="net.connman"/>
++    </policy>
+     <policy context="default">
+         <deny send_destination="net.connman"/>
+     </policy>

@@ -1,3 +1,4 @@
 01-init-script-lsb-headers.patch
 02-test-pbkdf2-sha1-maximum-salt-len-should-be-32-instead.patch
-03-fix-tethering-cpu-issue.patch
+03-add-netdev-to-dbus-connman-group.patch
+04-fix-tethering-cpu-issue.patch
