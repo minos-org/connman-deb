@@ -3,13 +3,13 @@ connman (1:201608160957+git105827e-minos) precise; urgency=low
   * add trusty/xenial packages into lp recipe:
     https://code.launchpad.net/~minos-archive/+recipe/connman
 
- -- Javier P.L. <chilicuil@ubuntu.com>  Tue, 16 Aug 2016 09:57:23 -0500
+ -- Javier López <m@javier.io>  Tue, 16 Aug 2016 09:57:23 -0500
 
 connman (1:201501200615+git105827e-minos) UNRELEASED; urgency=medium
 
   * minos auto build
 
- -- Javier P.L. <chilicuil@ubuntu.com>  Mon, 20 Jan 2015 09:31:13 +0200
+ -- Javier López <m@javier.io>  Mon, 20 Jan 2015 09:31:13 +0200
 
 connman (1.27-0.1) UNRELEASED; urgency=medium
 
